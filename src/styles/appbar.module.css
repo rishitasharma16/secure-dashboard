@@ -7,3 +7,12 @@
     padding: 6px 10px;
     border-radius: 7px ;
 }
+
+.appbar_items #icon svg{
+    width: 10% !important;
+    /* font-size: 10px; */
+}
+
+.box_icon box-icon{
+    width:90% !important;
+}

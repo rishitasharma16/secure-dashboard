@@ -34,16 +34,16 @@ function SideBar() {
 
   return (
     <div className={`${style} text-white font-medium px-5 overflow-hidden`} style={{width:'100%'}} >
-      <div className="flex flex-col justify-center items-center pt-5 ">
+      <div className="flex flex-col justify-center items-center py-5 ">
+        
           <img className="rounded-full w-14" src={dash.avatar} alt="avatar" />
-          <span>{dash.email}</span>
-        <div className={`${style.log_section} py-3 flex items-center`}> 
-        <box-icon name='log-in-circle' color="#ffffff"></box-icon>
-          <button onClick={handleLogout} className="ms-1">Logout</button>
+       
+        <div className="pt-3"> 
+          <button onClick={handleLogout}> <box-icon name='log-in-circle' color="#ffffff"></box-icon> </button>
         </div>
       </div>
 
-      <div className={`${style.link_items} pt-2`}>
+      <div className={`${style.link_items} py-3`}>
         <ul className="">
           {IsLoading ? (
             <h1>data</h1>
@@ -51,15 +51,14 @@ function SideBar() {
             sideItems.map((item) => {
               return (
                 <Link to={item.to} key={item.id} className="active capitalize">
-                  <li className="bg-center">
+                  <li className={style.collapse_icon}>
                     <span className="w-8 mt-1">
                       <box-icon
                         name={item.icon}
                         color="#ffffff"
-                        className="text-sm"
+                        className="text-sm"  
                       ></box-icon>
                     </span>
-                    {item.sidenav}
                   </li>
                 </Link>
               );

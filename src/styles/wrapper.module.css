@@ -6,9 +6,11 @@
 .lhs_area{
     width: 18%;
     background-image: linear-gradient(to bottom right, #121C84, #8278DA);
+    transition: all 0.3s ease-in;
 }
 .rhs_area{
     width: calc(100% - 18%);
+    transition: all 0.3s ease-in;
 
 }
 .appbar_section{

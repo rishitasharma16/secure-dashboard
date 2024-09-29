@@ -3,8 +3,9 @@
         {
             "id":1,
             "sidenav":"dashboard",
-            "to":"/index",
-            "icon":"dashboard"
+            "to":"/dashboard",
+            "icon":"tachometer"
+         
         },
         {
             "id":2,

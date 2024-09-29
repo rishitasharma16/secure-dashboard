@@ -15,7 +15,11 @@
 .link_items li a.active{
     background: #0000007f;
 }
-.link_items span svg{
-    color: red !important;
-    font-size: 13px;
+
+.log_section box-icon{
+    width: 80% !important;
+}
+
+.link_items .collapse_icon{
+    padding: 0 6px;
 }
