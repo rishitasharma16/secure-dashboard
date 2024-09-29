@@ -1,0 +1,12 @@
+.form_section{
+    /* background-image: linear-gradient(to bottom right, #FF3E9D, #0E1F40); */
+    /* background-image: linear-gradient(to bottom right, #FDABDD, #374A5A); */
+    /* background-image: linear-gradient(to bottom right, #38A2D7, #561139); */
+    /* background-image: linear-gradient(to bottom right, #5761B2, #1FC5A8); */
+    /* background-image: linear-gradient(to bottom , #00C0FF, #4218B8); */
+    background-image: linear-gradient(to bottom right, #121C84, #8278DA);
+    
+    height: 100vh;
+}
+
+

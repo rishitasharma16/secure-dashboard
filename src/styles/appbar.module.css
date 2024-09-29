@@ -1,0 +1,9 @@
+.appbar_items i{
+   color: #6762C5;
+}
+.appbar_items input{
+    width: 400px;
+    background: #F3F4F6;
+    padding: 6px 10px;
+    border-radius: 7px ;
+}
