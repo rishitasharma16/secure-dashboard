@@ -8,7 +8,7 @@ import axios from "axios";
 import SidebarSmall from "../components/SidebarSmall";
 
 function DashboardWrapper() {
-  const { token, user, dash, setDash, sideOpen } = useContext(AppContext);
+  const { token, user, setDash, sideOpen } = useContext(AppContext);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
@@ -25,7 +25,6 @@ function DashboardWrapper() {
         .then((response) => {
           setDash(response.data.data);
           setLoading(false);
-          console.log(response);
         })
         .catch((error) => {
           console.log(error);
@@ -38,11 +37,17 @@ function DashboardWrapper() {
   ) : (
     <div>
       <div className={`${style.wrapper_section} flex `}>
-        <div className={`${style.lhs_area} `} style={{width:sideOpen?'':'5%'}}>
-         { sideOpen?<SideBar />:<SidebarSmall />}
+        <div
+          className={`${style.lhs_area} `}
+          style={{ width: sideOpen ? "" : "5rem" }}
+        >
+          {sideOpen ? <SideBar /> : <SidebarSmall />}
         </div>
 
-        <div className={`${style.rhs_area}`} style={{width:sideOpen?'':'calc(100% - 5%)'}}>
+        <div
+          className={`${style.rhs_area}`}
+          style={{ width: sideOpen ? "" : "calc(100% - 5rem)" }}
+        >
           <div className={style.appbar_section}>
             <AppBar />
           </div>

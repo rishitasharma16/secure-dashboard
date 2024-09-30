@@ -4,7 +4,7 @@ import style from "../styles/sidebar.module.css";
 import axios from "axios";
 import AppContext from "../useContext/AppContext";
 function SideBar() {
-  const { token, setToken, user, setUser,dash} = useContext(AppContext);
+  const { token, setToken, user, setUser, dash } = useContext(AppContext);
   const [sideItems, setSideItems] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
 
@@ -24,22 +24,25 @@ function SideBar() {
       .then((response) => {
         setSideItems(response.data);
         setIsLoading(false);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-
   return (
-    <div className={`${style} text-white font-medium px-5 overflow-hidden`} style={{width:'100%'}} >
+    <div
+      className={`${style} text-white font-medium px-5 overflow-hidden`}
+      style={{ width: "100%" }}
+    >
       <div className="flex flex-col justify-center items-center pt-5 ">
-          <img className="rounded-full w-14" src={dash.avatar} alt="avatar" />
-          <span>{dash.email}</span>
-        <div className={`${style.log_section} py-3 flex items-center`}> 
-        <box-icon name='log-in-circle' color="#ffffff"></box-icon>
-          <button onClick={handleLogout} className="ms-1">Logout</button>
+        <img className="rounded-full w-14" src={dash.avatar} alt="avatar" />
+        <span>{dash.email}</span>
+        <div className={`${style.log_section} py-3 flex items-center`}>
+          <box-icon name="log-in-circle" color="#ffffff"></box-icon>
+          <button onClick={handleLogout} className="ms-1">
+            Logout
+          </button>
         </div>
       </div>
 

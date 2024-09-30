@@ -1,18 +1,17 @@
-.appbar_items i{
-   color: #6762C5;
+.appbar_items i {
+  color: #6762c5;
 }
-.appbar_items input{
-    width: 400px;
-    background: #F3F4F6;
-    padding: 6px 10px;
-    border-radius: 7px ;
+.appbar_items input {
+  width: 350px;
+  border-radius: 7px;
 }
 
-.appbar_items #icon svg{
-    width: 10% !important;
-    /* font-size: 10px; */
+.box_icon box-icon {
+  width: 85% !important;
 }
 
-.box_icon box-icon{
-    width:90% !important;
+@media only screen and (max-width: 768px) {
+  .appbar_items input {
+    width: 80%;
+  }
 }

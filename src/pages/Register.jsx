@@ -9,7 +9,7 @@ import Label from "../components/Forms/Label";
 import Input from "../components/Forms/Input";
 
 function Register() {
-  const { token, setToken,setUser } = useContext(AppContext);
+  const { token, setToken, setUser } = useContext(AppContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,11 +41,10 @@ function Register() {
     };
     axios(config)
       .then((response) => {
-        console.log(response);
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem('userId',response.data.id)
+        localStorage.setItem("userId", response.data.id);
         setToken(response.data.token);
-        setUser(response.data.id)
+        setUser(response.data.id);
         navigate("/dashboard");
       })
       .catch((error) => {
@@ -69,7 +68,6 @@ function Register() {
       className={`${style.form_section} flex flex-1 flex-col justify-center px-6 py-12 lg:px-8`}
     >
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-     
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
           Sign up new account
         </h2>
@@ -78,34 +76,35 @@ function Register() {
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
-          <Label htmlFor="email" text="Email"/>
-          <Input id="email" name="email" type="text" onchange={handleChange} value={userData.email}/>
+            <Label htmlFor="email" text="Email" />
+            <Input
+              id="email"
+              name="email"
+              type="text"
+              onchange={handleChange}
+              value={userData.email}
+            />
           </div>
-          
 
           <div>
             <div className="flex items-center justify-between">
-            <Label htmlFor="password" text="Password"/>
+              <Label htmlFor="password" text="Password" />
             </div>
-            <Input id="password" name="password" type="password" onchange={handleChange} value={userData.password}/>
-
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              onchange={handleChange}
+              value={userData.password}
+            />
           </div>
 
-          {/* <div>
-          <p className='py-4 text-white'>Already a member. please <Link className='text-blue-300 underline' to={'/'}>Sign In</Link></p>
-          <button
-            type="submit"
-            className="flex w-full justify-center rounded-md bg-slate-900 px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Sign Up
-          </button>
-        </div> */}
           <Button
-           btnTxt="Sign Up"
-           text="Already a member. please" 
-           to={'/'}
-           linkTxt="Sign In"
-           />
+            btnTxt="Sign Up"
+            text="Already a member. please"
+            to={"/"}
+            linkTxt="Sign In"
+          />
         </form>
       </div>
       <ToastContainer />

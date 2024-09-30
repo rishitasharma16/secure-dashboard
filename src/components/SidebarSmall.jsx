@@ -4,7 +4,7 @@ import style from "../styles/sidebar.module.css";
 import axios from "axios";
 import AppContext from "../useContext/AppContext";
 function SideBar() {
-  const { token, setToken, user, setUser,dash} = useContext(AppContext);
+  const { token, setToken, user, setUser, dash } = useContext(AppContext);
   const [sideItems, setSideItems] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
 
@@ -24,22 +24,25 @@ function SideBar() {
       .then((response) => {
         setSideItems(response.data);
         setIsLoading(false);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-
   return (
-    <div className={`${style} text-white font-medium px-5 overflow-hidden`} style={{width:'100%'}} >
+    <div
+      className={`${style} text-white font-medium px-5 overflow-hidden`}
+      style={{ width: "100%" }}
+    >
       <div className="flex flex-col justify-center items-center py-5 ">
-        
-          <img className="rounded-full w-14" src={dash.avatar} alt="avatar" />
-       
-        <div className="pt-3"> 
-          <button onClick={handleLogout}> <box-icon name='log-in-circle' color="#ffffff"></box-icon> </button>
+        <img className="rounded-full w-14" src={dash.avatar} alt="avatar" />
+
+        <div className="pt-3">
+          <button title="logout" onClick={handleLogout}>
+            {" "}
+            <box-icon name="log-in-circle" color="#ffffff"></box-icon>{" "}
+          </button>
         </div>
       </div>
 
@@ -56,7 +59,7 @@ function SideBar() {
                       <box-icon
                         name={item.icon}
                         color="#ffffff"
-                        className="text-sm"  
+                        className="text-sm"
                       ></box-icon>
                     </span>
                   </li>
